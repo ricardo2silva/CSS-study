@@ -872,6 +872,7 @@ Com align-content ele agrupa os conteudos e posiciona todo mundo para o local,vo
 }
 ```
 Observe que na imagem ele está com um espaçamento maior, pois ele nçao conseguiu colocar todo mundo no centro devido o seu tamanho.
+
 ![img_26.png](img_26.png)
 
 Agora vamos ver como se comporta com o align-content
