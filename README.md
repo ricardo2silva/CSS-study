@@ -1004,4 +1004,307 @@ com gap
 }
 ```
 ![img_30.png](img_30.png)
+
 consegue olhar a diferença? 
+
+Agora vamos trabalhar com o os elementos do item, nessa parte vamos fazer uma pequena modificaçao no html 
+
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item item2">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+</html>
+```
+## flex-basis
+
+flex-basis define o tamanho inicial do item no eixo principal. Em row, controla a largura; em column, controla a altura. O efeito visual pode confundir por causa do align-items: stretch.
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    flex-basis: 20px;
+}
+```
+![img_31.png](img_31.png)
+
+## flex-basis com flex-direction:column 
+
+```css
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    flex-basis: 20px;
+}
+```
+![img_32.png](img_32.png)
+
+## flex-grow
+
+- você consegue controlar o tamanho do elemento conforme a tela aumenta
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    flex-grow: 1;
+}
+
+```
+![img_33.png](img_33.png)
+
+## flex-shrink
+
+- você consegue controlar o tamanho do elemento conforme a tela diminui
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    flex-shrink: 4;
+}
+```
+![img_34.png](img_34.png)
+
+## flex
+
+flex é um atalho para flex-basis,flex-grow e flex-shrink
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    flex: 200px 1 1;
+}
+
+que seria isso declarado separado
+
+.item2 {
+    flex-basis:200px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+```
+Nesse caso vamo ter um elemento com 200px, quando a tela aumentar ela vai aumentar 1 x mais que os outros elementos, e quando a tela diminuir, ela vai diminuir 1x a mais que os outros.
+
+Imagens vão ser semelhantes aos 3 exemplos acima.
+
+
+## order
+altera a ordem do elemento, o valor de order não é posição absoluta, e sim prioridade relativa.
+Ou seja quanto maior o numero, menor é a prioridade, no nosso html temos 6 divs o 3 que contém a classe .item2  vai aparecer por ultimo,
+porque os demais tem o numero 0;
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    order: 2;
+}
+```
+
+![img_35.png](img_35.png)
+
+## align-self
+
+podemos alterar a posição do elemento, conforme desejado
+
+```css
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+
+.item2 {
+    align-self: flex-start;
+}
+```
+![img_36.png](img_36.png)
