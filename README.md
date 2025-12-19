@@ -313,8 +313,8 @@ Observe que mesmo com o item maior que o pai pela quantidade, ele respeitou o ta
 
 ## justify-content
 
-O justify-content permite a forma que organizamos os elementos dentro do container
-um outro detalhe é que o justify-content vai se comportar de acordo com o seu flex-direction
+O justify-content permite a forma que organizamos os elementos dentro do container.
+Um outro detalhe é que o justify-content vai se comportar de acordo com o seu flex-direction
 caso for row vai trabalhar na horizontal, caso column na vertical
 vamos ver alguns exemplos
 
@@ -602,3 +602,405 @@ vamos ver alguns exemplos
 }
 ```
 ![img_17.png](img_17.png)
+
+Agora vamos aprender sobre o align-items que vamos mexer no eixo secundario, por exemplo
+quando temos um flex-direction: row estamos trabalhando  com o eixo horizontal, e quando usamos o align-items vamos mexer nmo vertical
+Então fica dessa forma:
+flex-direction:row eixo principal horizontal, eixo secundario vertical.
+flex-direction:column eixo principal vertical, eixo secundario horizontal.
+![img_24.png](img_24.png)
+Mas vamos ver isso na pratica:
+
+## flex direction:row com justify-content:center e align-items:center
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item {
+    width: 50px;
+    height:50px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+
+![img_18.png](img_18.png)
+
+## flex direction:row com justify-content:center e align-items:flex-start
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.item {
+    width: 50px;
+    height:50px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_19.png](img_19.png)
+
+## flex direction:row com justify-content:center e align-items:flex-end
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.item {
+    width: 50px;
+    height:50px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_20.png](img_20.png)
+
+Agora vamos fazer com o flex-direction:column
+
+## flex direction:column com justify-content:center e align-items:center
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item {
+    width: 50px;
+    height:50px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_21.png](img_21.png)
+
+## flex direction:column com justify-content:center e align-items:flex-start
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.item {
+    width: 50px;
+    height:50px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_22.png](img_22.png)
+
+## flex direction:column com justify-content:center e align-items:flex-end
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.item {
+    width: 50px;
+    height:50px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_23.png](img_23.png)
+
+## flex direction:column com justify-content:center e align-items:stretch
+
+- Quando utilizamos o stretch,desde que os itens não tem um height definido, ele estica até ocupar o espaço no seu eixo cruzado
+
+```css
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: stretch;
+
+}
+
+.item {
+    /* width: 50px; */
+    /* height:50px; */
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+
+![img_25.png](img_25.png)
+
+## align-content 
+
+Com align-content ele agrupa os conteudos e posiciona todo mundo para o local,vou fazer um exemplo onde usamos o align-items e align-content para vermos a diferença
+
+## com align-items 
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+Observe que na imagem ele está com um espaçamento maior, pois ele nçao conseguiu colocar todo mundo no centro devido o seu tamanho.
+![img_26.png](img_26.png)
+
+Agora vamos ver como se comporta com o align-content
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-content: center;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+Consegue ver a diferença entre os dois ?
+![img_27.png](img_27.png)
+
+um outro exemplo posicionando o elemento abaixo
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-content: flex-end;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_28.png](img_28.png)
+
+## gap
+
+Basicamente ele cria um espaçamento entre todos os elementos
+
+sem gap
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+
+![img_29.png](img_29.png)
+
+com gap
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: purple;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;
+}
+
+.item {
+    width: 150px;
+    height:150px;
+    background-color: pink;
+    border: solid 1px black;
+    margin: 0px 10px 10px 10px; /*regra  up right down left */
+    color: blue;
+    font-size: 22px;
+}
+```
+![img_30.png](img_30.png)
+consegue olhar a diferença? 
